@@ -5,12 +5,12 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import Header from "./header"
-import styled from "styled-components"
+import Header from './header'
+import styled from 'styled-components'
 const Wrapper = styled.div`
   max-width: 960px;
   padding: 0 1.0875rem 1.45rem;
