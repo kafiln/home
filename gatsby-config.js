@@ -1,8 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Kafil`,
+    author: 'Kafil Nasdami',
+    description: `The personal website of Kafil Nasdami`,
+    author: `@kafiil`,
+    socials: [
+      { name: 'github', url: 'https://github.com/kafiil' },
+      { name: 'twitter', url: 'https://twitter.com/Kaaafiiil' },
+      { name: 'linkedin', url: 'https://linkedin.com/in/nkafil/' },
+      // { name: 'blog', url: 'https://kafil.xyz' },
+      { name: 'mail', url: 'mailto:kafil.nasdami@gmail.com' },
+    ],
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -20,8 +28,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Kafil's home`,
+        short_name: `Stories and blog`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

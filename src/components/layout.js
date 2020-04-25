@@ -5,16 +5,26 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
-
-import Header from './header'
+import React from 'react'
 import styled from 'styled-components'
-const Wrapper = styled.div`
-  max-width: 960px;
-  padding: 0 1.0875rem 1.45rem;
+
+const Container = styled.div`
+  height: 100vh;
 `
+
+const Header = styled.header`
+  /* height: 100vh; */
+`
+const Main = styled.main`
+  /* height: 100vh; */
+`
+
+const Aside = styled.aside``
+
+const Footer = styled.footer``
+const Content = styled.div``
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,17 +38,14 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Wrapper className="bg-teal-300 mx-auto rounded-md p-4">
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </Wrapper>
-    </>
+    <Container className="bg-red-200 flex flex-col ">
+      <Header className="px-4 bg-red-400">Kafil</Header>
+      <Main className="px-4 bg-gray-300 flex-grow flex flex-col sm:flex-row container mx-auto">
+        <Aside className="bg-teal-300 h-40 sm:w-56 sm:h-full"></Aside>
+        <Content className="bg-teal-900 flex-grow">{children}</Content>
+      </Main>
+      <Footer className=" px-4 bg-red-400">Some footer informations</Footer>
+    </Container>
   )
 }
 
