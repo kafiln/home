@@ -19,10 +19,21 @@ const Content = styled.div``
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query siteData {
+      imageSharp(fluid: { originalName: { eq: "logo.png" } }) {
+        fixed {
+          src
+        }
+      }
       site {
         siteMetadata {
           title
+          author
+          description
+          socials {
+            name
+            url
+          }
         }
       }
     }
@@ -30,7 +41,10 @@ const Layout = ({ children }) => {
 
   return (
     <Container className="bg-red-200 flex flex-col ">
-      <Header siteTitle={data.site.siteMetadata.title}></Header>
+      <Header
+        logo={data.imageSharp.fixed.src}
+        title={data.site.siteMetadata.title}
+      ></Header>
       <Main className="px-4 bg-gray-300 flex-grow flex flex-col sm:flex-row">
         <Aside className="bg-teal-300 h-40 sm:w-56 sm:h-full"></Aside>
         <Content className="bg-teal-900 flex-grow">{children}</Content>
